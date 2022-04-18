@@ -1,0 +1,28 @@
+# rosrun wiimote wiimode_node.py
+# /wiimote/classic
+mappings:
+  axes:
+    - axes[0]
+    - axes[1]
+    - 0
+    - axes[2]
+    - axes[3]
+    - 0
+  buttons:
+    - buttons[3]
+    - buttons[2]
+    - buttons[0]
+    - buttons[1]
+    - buttons[11]
+    - buttons[12]
+    - buttons[13]
+    - buttons[14]
+    - buttons[5]
+    - buttons[4]
+    - buttons[10]
+    - 0
+    - 0
+    - buttons[8]
+    - buttons[9]
+    - buttons[6]
+    - buttons[7]

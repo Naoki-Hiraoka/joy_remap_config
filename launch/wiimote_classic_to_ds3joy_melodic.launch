@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="wiimote" type="wiimote_node.py" name="wiimote_node">
+    <remap from="joy" to="wiimote/joy"/>
+  </node>
+  <node name="joy_remap" pkg="joy" type="joy_remap.py" output="screen" >
+    <remap from="joy_in" to="wiimote/classic" />
+    <remap from="joy_out" to="joy" />
+    <rosparam command="load" file="$(find joy_remap_config)/config/wiimote_classic_to_ds3joy_melodic.yaml" />
+  </node>
+</launch>
