@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="joy" type="joy_node" name="joy_node">
+    <remap from="joy" to="joy_raw"/>
+  </node>
+  <node name="joy_remap" pkg="joy" type="joy_remap.py" output="screen" >
+    <remap from="joy_in" to="joy_raw" />
+    <remap from="joy_out" to="joy" />
+    <rosparam command="load" file="$(find joy_remap_config)/config/ds5joy_to_ds3joy_melodic.yaml" />
+  </node>
+</launch>
