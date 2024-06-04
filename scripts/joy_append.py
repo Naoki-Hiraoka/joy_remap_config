@@ -16,8 +16,9 @@ class JoyAppend(object):
 
     def callback(self, data, index):
         self.msg_in[index] = data
-        if all(msg != None for msg in self.msg_in) and self.last_stamp < data.header.stamp:
-            self.last_stamp = data.header.stamp
+        if all(msg != None for msg in self.msg_in):
+            if self.last_stamp < data.header.stamp:
+                self.last_stamp = data.header.stamp
             msg_out = Joy()
             msg_out.header.stamp = data.header.stamp
             for msg in self.msg_in:
